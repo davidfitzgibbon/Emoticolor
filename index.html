@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Emoticolor</title>
+		
+		<style>
+			body{
+				margin:0; padding:0;background:#f5f5f5;
+			}
+			
+			.cont{
+				width:960px; margin:auto;
+			}
+		
+			ul {
+				margin:0; padding:0; width:100%;
+			}
+			
+			li {
+				padding:10px; width:9.5%;  list-style:none; margin:0; display:inline-block; border:solid 1px white; text-align:center; border-radius:5px; cursor:pointer;
+			}
+			
+			.s {
+				border:1px solid black;
+			}
+			
+			.col {
+				height:50px; width:70%; margin:0 0 20px 0; padding:0; float:left; overflow:auto; border:1px solid black
+			}
+			
+			span{
+				display:block; text-align:center; width:29%; height:42px; margin:0 0 20px 0; float:right; font-size: 3.5em;line-height: 1em;padding:0 0 10px 0;
+			}
+			
+		</style>
+		
+		<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.6.2.min.js"></script>
+		<script>
+			$(function(){
+				col = $('.col');
+				rgb = $('span');
+				$('li').click(function(){
+					if($(this).hasClass('s')){
+						$('.s').removeClass('s');
+						rgb.html('');
+					} else {
+						$('.s').removeClass('s');
+						$(this).addClass('s');
+						bg = '#'+$(this).attr('data-color');
+						rgb.html(bg);
+						col.css('background', bg);
+					}
+				});
+			});
+		</script>
+	</head>
+	
+	<body>
+		<div class="cont">
+		<header>
+			<h1>Emoticolor</h1>
+		</header>
+		
+		<div class='col'></div><span>#xxxxxx</span>
+		
+		<ul>
+			<li data-color="FF0000">fire</li>
+			<li data-color="FF0000">blood</li>
+			<li data-color="FA8072">joy</li>
+			<li data-color="FA8072">sexuality</li>
+			<li data-color="FA8072">passion</li>
+			<li data-color="FA8072">sensitivity</li>
+			<li data-color="FA8072">love</li>
+			<li data-color="FFC0CB">romance</li>
+			<li data-color="FFC0CB">love</li>
+			<li data-color="FFC0CB">friendship</li>
+			<li data-color="FFC0CB">feminine </li>
+			<li data-color="FFC0CB">passive</li>
+			<li data-color="8B0000">vigor</li>
+			<li data-color="8B0000">willpower</li>
+			<li data-color="8B0000">rage</li>
+			<li data-color="8B0000">anger</li>
+			<li data-color="8B0000">leadership</li>
+			<li data-color="8B0000">courage</li>
+			<li data-color="8B0000">longing</li>
+			<li data-color="8B0000">malice</li>
+			<li data-color="8B0000">wrath</li>
+			<li data-color="A52A2A">stability</li>
+			<li data-color="A52A2A">masculine</li>
+			<li data-color="D2691E">harvest</li>
+			<li data-color="D2691E">fall</li>
+			<li data-color="FFA500">energy</li>
+			<li data-color="FFA500">happiness</li>
+			<li data-color="B8860B">deceit</li>
+			<li data-color="B8860B">distrust</li>
+			<li data-color="CD5C5C">desire</li>
+			<li data-color="CD5C5C">passion</li>
+			<li data-color="CD5C5C">pleasure</li>
+			<li data-color="CD5C5C">domination</li>
+			<li data-color="CD5C5C">aggression</li>
+			<li data-color="CD5C5C">action</li>
+			<li data-color="FFD700">prestige</li>
+			<li data-color="FFD700">illumination</li>
+			<li data-color="FFD700">wisdom</li>
+			<li data-color="FFD700">wealth</li>
+			<li data-color="FFD700">quality</li>
+			<li data-color="FFFF00">joy</li>
+			<li data-color="FFFF00">happiness</li>
+			<li data-color="FFFF00">intellect</li>
+			<li data-color="FFFF00">energy</li>
+			<li data-color="F0E68C">caution</li>
+			<li data-color="F0E68C">decay</li>
+			<li data-color="F0E68C">sickness</li>
+			<li data-color="F0E68C">jealousy</li>
+			<li data-color="FFFFE0">intellect</li>
+			<li data-color="FFFFE0">freshness</li>
+			<li data-color="FFFFE0">joy</li>
+			<li data-color="008000">nature</li>
+			<li data-color="008000">growth</li>
+			<li data-color="008000">harmony</li>
+			<li data-color="008000">freshness</li>
+			<li data-color="008000">fertility</li>
+			<li data-color="006400">ambition</li>
+			<li data-color="006400">greed</li>
+			<li data-color="006400">jealousy</li>
+			<li data-color="9ACD32">sickness</li>
+			<li data-color="9ACD32">cowardice</li>
+			<li data-color="9ACD32">discord</li>
+			<li data-color="9ACD32">jealousy</li>
+			<li data-color="808000">peace</li>
+			<li data-color="00FFFF">healing</li>
+			<li data-color="00FFFF">protection</li>
+			<li data-color="0000FF">depth</li>
+			<li data-color="0000FF">stability</li>
+			<li data-color="0000FF">trust</li>
+			<li data-color="0000FF">loyalty</li>
+			<li data-color="0000FF">wisdom</li>
+			<li data-color="0000FF">confidence</li>
+			<li data-color="0000FF">intelligence</li>
+			<li data-color="0000FF">faith</li>
+			<li data-color="0000FF">truth</li>
+			<li data-color="ADD8E6">health</li>
+			<li data-color="ADD8E6">healing</li>
+			<li data-color="ADD8E6">tranquility</li>
+			<li data-color="ADD8E6">understanding</li>
+			<li data-color="ADD8E6">softness</li>
+			<li data-color="00008B">knowledge</li>
+			<li data-color="00008B">power</li>
+			<li data-color="00008B">integrity</li>
+			<li data-color="00008B">seriousness</li>
+			<li data-color="800080">royalty</li>
+			<li data-color="800080">power</li>
+			<li data-color="800080">nobility</li>
+			<li data-color="800080">luxury</li>
+			<li data-color="800080">ambition</li>
+			<li data-color="800080">wealth</li>
+			<li data-color="800080">extravagance</li>
+			<li data-color="DDA0DD">romantic</li>
+			<li data-color="DDA0DD">nostalgic</li>
+			<li data-color="8B008B">gloom</li>
+			<li data-color="8B008B">sad</li>
+			<li data-color="8B008B">frustration</li>
+			<li data-color="FFFFFF">light</li>
+			<li data-color="FFFFFF">goodness</li>
+			<li data-color="FFFFFF">innocence</li>
+			<li data-color="FFFFFF">purity</li>
+			<li data-color="FFFFFF">virginity</li>
+			<li data-color="000000">power</li>
+			<li data-color="000000">elegance</li>
+			<li data-color="000000">formality</li>
+			<li data-color="000000">death</li>
+			<li data-color="000000">evil</li>
+			<li data-color="000000">mystery</li>
+		</ul>
+		</div>
+	</body>
+</html>
