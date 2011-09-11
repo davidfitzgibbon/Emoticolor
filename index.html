@@ -27,7 +27,7 @@
 			$(function(){
 				var color = $('.col');var display = $('span');
 				
-				function setRBG(){r=0;g=0;b=0;x=0;$('.s').each(function(){r=r+parseInt($(this).attr('data-r'));g=g+parseInt($(this).attr('data-g'));b=b+parseInt($(this).attr('data-b'));x++;});r=='0' ? rgb = 'rgb(245,245,245)' : rgb='rgb('+Math.round((r/x))+','+Math.round((g/x))+','+Math.round((b/x))+')';}
+				function setRBG(){r=0;g=0;b=0;x=0;$('.s').each(function(){r=r+parseInt($(this).attr('data-r'));g=g+parseInt($(this).attr('data-g'));b=b+parseInt($(this).attr('data-b'));x++;});x=='0'?rgb='rgb(244,244,244)':rgb='rgb('+Math.round((r/x))+','+Math.round((g/x))+','+Math.round((b/x))+')';}
 				
 				
 				function update(){setRBG();display.html(rgb);color.css('background',rgb);}
