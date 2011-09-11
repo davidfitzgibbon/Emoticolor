@@ -32,7 +32,7 @@
 			
 			footer{text-align:center;margin-top:20px;}
 			
-			.mob { display: none; }
+			.mob, .land, .port { display: none; }
 			
 			@media (max-width: 960px) { 
 				.cont{width:96%;}
@@ -47,6 +47,7 @@
 				@media screen and (orientation:portrait) and (max-width:600px) {
 				
 				    ul, .land{display:none;}
+				    .port{display:block;}
 				
 				}
 				
@@ -54,7 +55,7 @@
 				
 				   span, .col, header, .intro, .port {display:none}
 				   li{width:27%}
-				
+					.land{display:block}
 				}
 
 			
