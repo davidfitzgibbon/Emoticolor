@@ -18,6 +18,8 @@
 			
 			span{display:block; text-align:center; width:29%; height:42px; margin:0 0 20px 0; float:right; font-size: 3.5em;line-height: 1em;padding:0 0 10px 0;}
 			
+			footer{text-align:center;margin-top:20px;}
+			
 		</style>
 		
 		<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.6.2.min.js"></script>
@@ -25,9 +27,8 @@
 			$(function(){
 				var color = $('.col');var display = $('span');
 				
-				function setRBG(){r=0;g=0;b=0;x=0;$('.s').each(function(){r=r+parseInt($(this).attr('data-r'));g=g+parseInt($(this).attr('data-g'));b=b+parseInt($(this).attr('data-b'));x++;});
+				function setRBG(){r=0;g=0;b=0;x=0;$('.s').each(function(){r=r+parseInt($(this).attr('data-r'));g=g+parseInt($(this).attr('data-g'));b=b+parseInt($(this).attr('data-b'));x++;});r=='0' ? rgb = 'rgb(245,245,245)' : rgb='rgb('+Math.round((r/x))+','+Math.round((g/x))+','+Math.round((b/x))+')';}
 				
-				rgb='rgb('+Math.round((r/x))+','+Math.round((g/x))+','+Math.round((b/x))+')';console.log(rgb);}
 				
 				function update(){setRBG();display.html(rgb);color.css('background',rgb);}
 				
@@ -41,144 +42,148 @@
 	
 	<body>
 		<div class="cont">
-		<header>
-			<h1>Emoticolor</h1>
-		</header>
-		
-		<div class='col'></div><span></span>
-		
-		<ul>
-			<li data-r="255" data-g="0" data-b="0">fire</li>
-			<li data-r="255" data-g="0" data-b="0">blood</li>
+			<header>
+				<h1>Emoticolor</h1>
+			</header>
 			
-			<li data-r="250" data-g="128" data-b="114">sexuality</li>
-			<li data-r="250" data-g="128" data-b="114">passion</li>
-			<li data-r="250" data-g="128" data-b="114">sensitivity</li>
-			<li data-r="250" data-g="128" data-b="114">love</li>
+			<div class='col'></div><span></span>
 			
-			<li data-r="255" data-g="192" data-b="203">romance</li>
-			<li data-r="255" data-g="192" data-b="203">love</li>
-			<li data-r="255" data-g="192" data-b="203">friendship</li>
-			<li data-r="255" data-g="192" data-b="203">feminine </li>
-			<li data-r="255" data-g="192" data-b="203">passive</li>
+			<ul>
+				<li data-r="255" data-g="0" data-b="0">fire</li>
+				<li data-r="255" data-g="0" data-b="0">blood</li>
+				
+				<li data-r="250" data-g="128" data-b="114">sexuality</li>
+				<li data-r="250" data-g="128" data-b="114">passion</li>
+				<li data-r="250" data-g="128" data-b="114">sensitivity</li>
+				<li data-r="250" data-g="128" data-b="114">love</li>
+				
+				<li data-r="255" data-g="192" data-b="203">romance</li>
+				<li data-r="255" data-g="192" data-b="203">love</li>
+				<li data-r="255" data-g="192" data-b="203">friendship</li>
+				<li data-r="255" data-g="192" data-b="203">feminine </li>
+				<li data-r="255" data-g="192" data-b="203">passive</li>
+				
+				<li data-r="139" data-g="0" data-b="0">vigor</li>
+				<li data-r="139" data-g="0" data-b="0">willpower</li>
+				<li data-r="139" data-g="0" data-b="0">rage</li>
+				<li data-r="139" data-g="0" data-b="0">anger</li>
+				<li data-r="139" data-g="0" data-b="0">leadership</li>
+				<li data-r="139" data-g="0" data-b="0">courage</li>
+				<li data-r="139" data-g="0" data-b="0">longing</li>
+				<li data-r="139" data-g="0" data-b="0">malice</li>
+				<li data-r="139" data-g="0" data-b="0">wrath</li>
+				
+				<li data-r="165" data-g="42" data-b="42">stability</li>
+				<li data-r="165" data-g="42" data-b="42">masculine</li>
+				
+				<li data-r="210" data-g="105" data-b="30">harvest</li>
+				<li data-r="210" data-g="105" data-b="30">fall</li>
+				
+				<li data-r="255" data-g="165" data-b="0">energy</li>
+				<li data-r="255" data-g="165" data-b="0">happiness</li>
+				
+				<li data-r="184" data-g="134" data-b="11">deceit</li>
+				<li data-r="184" data-g="134" data-b="11">distrust</li>
+				
+				<li data-r="205" data-g="92" data-b="92">desire</li>
+				<li data-r="205" data-g="92" data-b="92">passion</li>
+				<li data-r="205" data-g="92" data-b="92">pleasure</li>
+				<li data-r="205" data-g="92" data-b="92">domination</li>
+				<li data-r="205" data-g="92" data-b="92">aggression</li>
+				<li data-r="205" data-g="92" data-b="92">action</li>
+				
+				<li data-r="255" data-g="215" data-b="0">prestige</li>
+				<li data-r="255" data-g="215" data-b="0">illumination</li>
+				<li data-r="255" data-g="215" data-b="0">wisdom</li>
+				<li data-r="255" data-g="215" data-b="0">wealth</li>
+				<li data-r="255" data-g="215" data-b="0">quality</li>
+				
+				<li data-r="255" data-g="255" data-b="0">happiness</li>
+				<li data-r="255" data-g="255" data-b="0">intellect</li>
+				<li data-r="255" data-g="255" data-b="0">energy</li>
+				
+				<li data-r="240" data-g="230" data-b="140">caution</li>
+				<li data-r="240" data-g="230" data-b="140">decay</li>
+				<li data-r="240" data-g="230" data-b="140">sickness</li>
+				<li data-r="240" data-g="230" data-b="140">jealousy</li>
+				
+				<li data-r="255" data-g="255" data-b="224">intellect</li>
+				<li data-r="255" data-g="255" data-b="224">freshness</li>
+				<li data-r="255" data-g="255" data-b="224">joy</li>
+				
+				<li data-r="0" data-g="128" data-b="0">nature</li>
+				<li data-r="0" data-g="128" data-b="0">growth</li>
+				<li data-r="0" data-g="128" data-b="0">harmony</li>
+				<li data-r="0" data-g="128" data-b="0">freshness</li>
+				<li data-r="0" data-g="128" data-b="0">fertility</li>
+				
+				<li data-r="0" data-g="100" data-b="0">ambition</li>
+				<li data-r="0" data-g="100" data-b="0">greed</li>
+				<li data-r="0" data-g="100" data-b="0">jealousy</li>
+				
+				<li data-r="154" data-g="205" data-b="205">sickness</li>
+				<li data-r="154" data-g="205" data-b="205">cowardice</li>
+				<li data-r="154" data-g="205" data-b="205">discord</li>
+				<li data-r="154" data-g="205" data-b="205">jealousy</li>
+				
+				<li data-r="128" data-g="128" data-b="0">peace</li>
+				
+				<li data-r="0" data-g="255" data-b="255">healing</li>
+				<li data-r="0" data-g="255" data-b="255">protection</li>
+				
+				<li data-r="0" data-g="0" data-b="255">depth</li>
+				<li data-r="0" data-g="0" data-b="255">stability</li>
+				<li data-r="0" data-g="0" data-b="255">trust</li>
+				<li data-r="0" data-g="0" data-b="255">loyalty</li>
+				<li data-r="0" data-g="0" data-b="255">wisdom</li>
+				<li data-r="0" data-g="0" data-b="255">confidence</li>
+				<li data-r="0" data-g="0" data-b="255">intelligence</li>
+				<li data-r="0" data-g="0" data-b="255">faith</li>
+				<li data-r="0" data-g="0" data-b="255">truth</li>
+				
+				<li data-r="173" data-g="216" data-b="230">health</li>
+				<li data-r="173" data-g="216" data-b="230">healing</li>
+				<li data-r="173" data-g="216" data-b="230">tranquility</li>
+				<li data-r="173" data-g="216" data-b="230">understanding</li>
+				<li data-r="173" data-g="216" data-b="230">softness</li>
+				
+				<li data-r="0" data-g="0" data-b="139">knowledge</li>
+				<li data-r="0" data-g="0" data-b="139">power</li>
+				<li data-r="0" data-g="0" data-b="139">integrity</li>
+				<li data-r="0" data-g="0" data-b="139">seriousness</li>
+				
+				<li data-r="128" data-g="0" data-b="128">royalty</li>
+				<li data-r="128" data-g="0" data-b="128">power</li>
+				<li data-r="128" data-g="0" data-b="128">nobility</li>
+				<li data-r="128" data-g="0" data-b="128">luxury</li>
+				<li data-r="128" data-g="0" data-b="128">ambition</li>
+				<li data-r="128" data-g="0" data-b="128">wealth</li>
+				<li data-r="128" data-g="0" data-b="128">extravagance</li>
+				
+				<li data-r="211" data-g="160" data-b="211">romantic</li>
+				<li data-r="211" data-g="160" data-b="211">nostalgic</li>
+				
+				<li data-r="139" data-g="0" data-b="139">gloom</li>
+				<li data-r="139" data-g="0" data-b="139">sad</li>
+				<li data-r="139" data-g="0" data-b="139">frustration</li>
+				
+				<li data-r="255" data-g="255" data-b="255">light</li>
+				<li data-r="255" data-g="255" data-b="255">goodness</li>
+				<li data-r="255" data-g="255" data-b="255">innocence</li>
+				<li data-r="255" data-g="255" data-b="255">purity</li>
+				<li data-r="255" data-g="255" data-b="255">virginity</li>
+				
+				<li data-r="0" data-g="0" data-b="0">power</li>
+				<li data-r="0" data-g="0" data-b="0">elegance</li>
+				<li data-r="0" data-g="0" data-b="0">formality</li>
+				<li data-r="0" data-g="0" data-b="0">death</li>
+				<li data-r="0" data-g="0" data-b="0">evil</li>
+				<li data-r="0" data-g="0" data-b="0">mystery</li>
+			</ul>
 			
-			<li data-r="139" data-g="0" data-b="0">vigor</li>
-			<li data-r="139" data-g="0" data-b="0">willpower</li>
-			<li data-r="139" data-g="0" data-b="0">rage</li>
-			<li data-r="139" data-g="0" data-b="0">anger</li>
-			<li data-r="139" data-g="0" data-b="0">leadership</li>
-			<li data-r="139" data-g="0" data-b="0">courage</li>
-			<li data-r="139" data-g="0" data-b="0">longing</li>
-			<li data-r="139" data-g="0" data-b="0">malice</li>
-			<li data-r="139" data-g="0" data-b="0">wrath</li>
-			
-			<li data-r="165" data-g="42" data-b="42">stability</li>
-			<li data-r="165" data-g="42" data-b="42">masculine</li>
-			
-			<li data-r="210" data-g="105" data-b="30">harvest</li>
-			<li data-r="210" data-g="105" data-b="30">fall</li>
-			
-			<li data-r="255" data-g="165" data-b="0">energy</li>
-			<li data-r="255" data-g="165" data-b="0">happiness</li>
-			
-			<li data-r="184" data-g="134" data-b="11">deceit</li>
-			<li data-r="184" data-g="134" data-b="11">distrust</li>
-			
-			<li data-r="205" data-g="92" data-b="92">desire</li>
-			<li data-r="205" data-g="92" data-b="92">passion</li>
-			<li data-r="205" data-g="92" data-b="92">pleasure</li>
-			<li data-r="205" data-g="92" data-b="92">domination</li>
-			<li data-r="205" data-g="92" data-b="92">aggression</li>
-			<li data-r="205" data-g="92" data-b="92">action</li>
-			
-			<li data-r="255" data-g="215" data-b="0">prestige</li>
-			<li data-r="255" data-g="215" data-b="0">illumination</li>
-			<li data-r="255" data-g="215" data-b="0">wisdom</li>
-			<li data-r="255" data-g="215" data-b="0">wealth</li>
-			<li data-r="255" data-g="215" data-b="0">quality</li>
-			
-			<li data-r="255" data-g="255" data-b="0">happiness</li>
-			<li data-r="255" data-g="255" data-b="0">intellect</li>
-			<li data-r="255" data-g="255" data-b="0">energy</li>
-			
-			<li data-r="240" data-g="230" data-b="140">caution</li>
-			<li data-r="240" data-g="230" data-b="140">decay</li>
-			<li data-r="240" data-g="230" data-b="140">sickness</li>
-			<li data-r="240" data-g="230" data-b="140">jealousy</li>
-			
-			<li data-r="255" data-g="255" data-b="224">intellect</li>
-			<li data-r="255" data-g="255" data-b="224">freshness</li>
-			<li data-r="255" data-g="255" data-b="224">joy</li>
-			
-			<li data-r="0" data-g="128" data-b="0">nature</li>
-			<li data-r="0" data-g="128" data-b="0">growth</li>
-			<li data-r="0" data-g="128" data-b="0">harmony</li>
-			<li data-r="0" data-g="128" data-b="0">freshness</li>
-			<li data-r="0" data-g="128" data-b="0">fertility</li>
-			
-			<li data-r="0" data-g="100" data-b="0">ambition</li>
-			<li data-r="0" data-g="100" data-b="0">greed</li>
-			<li data-r="0" data-g="100" data-b="0">jealousy</li>
-			
-			<li data-r="154" data-g="205" data-b="205">sickness</li>
-			<li data-r="154" data-g="205" data-b="205">cowardice</li>
-			<li data-r="154" data-g="205" data-b="205">discord</li>
-			<li data-r="154" data-g="205" data-b="205">jealousy</li>
-			
-			<li data-r="128" data-g="128" data-b="0">peace</li>
-			
-			<li data-r="0" data-g="255" data-b="255">healing</li>
-			<li data-r="0" data-g="255" data-b="255">protection</li>
-			
-			<li data-r="0" data-g="0" data-b="255">depth</li>
-			<li data-r="0" data-g="0" data-b="255">stability</li>
-			<li data-r="0" data-g="0" data-b="255">trust</li>
-			<li data-r="0" data-g="0" data-b="255">loyalty</li>
-			<li data-r="0" data-g="0" data-b="255">wisdom</li>
-			<li data-r="0" data-g="0" data-b="255">confidence</li>
-			<li data-r="0" data-g="0" data-b="255">intelligence</li>
-			<li data-r="0" data-g="0" data-b="255">faith</li>
-			<li data-r="0" data-g="0" data-b="255">truth</li>
-			
-			<li data-r="173" data-g="216" data-b="230">health</li>
-			<li data-r="173" data-g="216" data-b="230">healing</li>
-			<li data-r="173" data-g="216" data-b="230">tranquility</li>
-			<li data-r="173" data-g="216" data-b="230">understanding</li>
-			<li data-r="173" data-g="216" data-b="230">softness</li>
-			
-			<li data-r="0" data-g="0" data-b="139">knowledge</li>
-			<li data-r="0" data-g="0" data-b="139">power</li>
-			<li data-r="0" data-g="0" data-b="139">integrity</li>
-			<li data-r="0" data-g="0" data-b="139">seriousness</li>
-			
-			<li data-r="128" data-g="0" data-b="128">royalty</li>
-			<li data-r="128" data-g="0" data-b="128">power</li>
-			<li data-r="128" data-g="0" data-b="128">nobility</li>
-			<li data-r="128" data-g="0" data-b="128">luxury</li>
-			<li data-r="128" data-g="0" data-b="128">ambition</li>
-			<li data-r="128" data-g="0" data-b="128">wealth</li>
-			<li data-r="128" data-g="0" data-b="128">extravagance</li>
-			
-			<li data-r="211" data-g="160" data-b="211">romantic</li>
-			<li data-r="211" data-g="160" data-b="211">nostalgic</li>
-			
-			<li data-r="139" data-g="0" data-b="139">gloom</li>
-			<li data-r="139" data-g="0" data-b="139">sad</li>
-			<li data-r="139" data-g="0" data-b="139">frustration</li>
-			
-			<li data-r="255" data-g="255" data-b="255">light</li>
-			<li data-r="255" data-g="255" data-b="255">goodness</li>
-			<li data-r="255" data-g="255" data-b="255">innocence</li>
-			<li data-r="255" data-g="255" data-b="255">purity</li>
-			<li data-r="255" data-g="255" data-b="255">virginity</li>
-			
-			<li data-r="0" data-g="0" data-b="0">power</li>
-			<li data-r="0" data-g="0" data-b="0">elegance</li>
-			<li data-r="0" data-g="0" data-b="0">formality</li>
-			<li data-r="0" data-g="0" data-b="0">death</li>
-			<li data-r="0" data-g="0" data-b="0">evil</li>
-			<li data-r="0" data-g="0" data-b="0">mystery</li>
-		</ul>
+			<footer>
+				David Fitzgibbon - 2011 &copy;
+			</footer>
 		</div>
 	</body>
 </html>
