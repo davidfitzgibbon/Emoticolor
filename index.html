@@ -69,8 +69,8 @@
 				
 				function update(){setRBG();display.html(rgb);color.css('background',rgb);}
 				
-				if ('ontouch' in document) {
-				    $('li').bind('ontouch', function(){$(this).hasClass('s')?$(this).removeClass('s'):$(this).addClass('s');update();});
+				if ('ontouchend' in document) {
+				    $('li').bind('ontouchend', function(){$(this).hasClass('s')?$(this).removeClass('s'):$(this).addClass('s');update();});
 				}else{
 					$('li').click(function(){$(this).hasClass('s')?$(this).removeClass('s'):$(this).addClass('s');update();});
 				}
