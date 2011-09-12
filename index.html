@@ -69,8 +69,12 @@
 				
 				function update(){setRBG();display.html(rgb);color.css('background',rgb);}
 				
-				$('li').click(function(){$(this).hasClass('s')?$(this).removeClass('s'):$(this).addClass('s');update();});
-					
+				if ('ontouch' in document) {
+				    $('li').bind('ontouch', function(){$(this).hasClass('s')?$(this).removeClass('s'):$(this).addClass('s');update();});
+				}else{
+					$('li').click(function(){$(this).hasClass('s')?$(this).removeClass('s'):$(this).addClass('s');update();});
+				}
+				
 				update();
 				
 				$('button').click(function(){
