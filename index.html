@@ -32,44 +32,30 @@
 			
 			a:hover, a:active, li:hover, li:active { outline: 0; }
 			
-			@media (max-width: 960px) { 
-				.cont{width:96%;}
-			}
+			@media (max-width: 960px) {.cont{width:96%;}}
 
 
-			@media (max-width: 600px) { 
-				.mob{display:block;}
-				button{border-color: #eee;margin-top:4em;}
-			}
+			@media (max-width: 600px) {.mob{display:block;}button{border-color: #eee;margin-top:4em;}}
 			
-				@media screen and (orientation:portrait) and (max-width:600px) {
-				    ul, .land{display:none;}
-				    .port{display:block;}
-				}
+			@media (orientation:portrait) and (max-width:600px) {ul, .land{display:none;}.port{display:block;}}
 				
-				@media screen and (orientation:landscape) and (max-width:600px) {
-					h2, .col, header, .intro, .port, button {display:none}
-					.land{display:block;text-align:center}
-					.cont{padding-top:0;}
-				}
+			@media (orientation:landscape) and (max-width:600px) {h2, header, .intro, .port, button {display:none}.land{display:block;text-align:center}.cont{padding-top:0;}}
 			
 		</style>
 		
 		<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.6.2.min.js"></script>
 		<script>
-			$(function(){
-				var display = $('h2'); var tot=1000;
+				$(function(){
+				var display = $('h2'); var tot=1000;var r=0;var g=0;var b=0;var x=0;
+					
+				function total(){tot=(Math.round((r/x))+Math.round((g/x))+Math.round((b/x)));}
 				
-				function setRBG(){r=0;g=0;b=0;x=0;$('.s').each(function(){r=r+parseInt($(this).attr('data-r'));g=g+parseInt($(this).attr('data-g'));b=b+parseInt($(this).attr('data-b'));x++;});if(x=='0'){rgb='rgb(255,255,255)';tot==0;}else{rgb='rgb('+Math.round((r/x))+','+Math.round((g/x))+','+Math.round((b/x))+')';tot=(Math.round((r/x))+Math.round((g/x))+Math.round((b/x)));}}
+				function setRBG(){r=0;g=0;b=0;x=0;$('.s').each(function(){r=r+parseInt($(this).attr('data-r'));g=g+parseInt($(this).attr('data-g'));b=b+parseInt($(this).attr('data-b'));x++;});if(x=='0'){rgb='rgb(255,255,255)';total();}else{rgb='rgb('+Math.round((r/x))+','+Math.round((g/x))+','+Math.round((b/x))+')';total();}}
 				
 				
-				function update(){setRBG();display.html(rgb);$('body').css('background', rgb);console.log(tot);
-					if(tot < 254){
-						$('body').css('color', '#fff');$('button').css('color', '#fff');
-					}else{
-						$('body').css('color', '#000');$('button').css('color', '#000');
-					}
-				}
+				function update(){setRBG();display.html(rgb);$('body').css('background', rgb);if(tot < 254){$('body').css('color', '#fff');$('button').css('color', '#fff');}else{$('body').css('color', '#000');$('button').css('color', '#000');}}
+				
+				
 				
 				if ('ontouch' in document) {
 				    $('li').bind('ontouch', function(){$(this).hasClass('s')?$(this).removeClass('s'):$(this).addClass('s');update();});
@@ -77,13 +63,9 @@
 					$('li').click(function(){$(this).hasClass('s')?$(this).removeClass('s'):$(this).addClass('s');update();});
 				}
 				
-				$('button').click(function(){
-					$('li').removeClass('s');
-					update();
-				});
+				$('.reset').click(function(){$('li').removeClass('s');update();});
 				
 				update();
-				
 			});
 		</script>
 	</head>
@@ -100,7 +82,7 @@
 			<p class='land'>Rotate your device to see rgb settings</p>
 			
 			<h2></h2>			
-			<button>Reset</button>
+			<button class="reset">Reset</button>
 			
 			<ul>
 				<li data-r="255" data-g="0" data-b="0">fire</li>
