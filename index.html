@@ -83,6 +83,17 @@
 					update();
 				});
 				
+				window.onload = function initialLoad(){  
+				    orient();  
+				}  
+				
+				function updateOrientation(){  
+				    if(window.orientation == 90 || window.orientation == -90){  
+				    	bodyCol = $('.col').css('backgroundColor');
+				    	$('.cont').css('backgroundColor', bodyCol); 
+				    }  
+				}  
+				
 			});
 		</script>
 	</head>
