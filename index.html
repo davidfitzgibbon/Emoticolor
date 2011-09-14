@@ -10,18 +10,15 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		
 		<style>
-			body, h1, li, ul, div, span {margin:0; padding:0;line-height:1em;font-size:16px;font-family:Futura, “Century Gothic”, AppleGothic, sans-serif;}
+			body, h1, li, ul, div, h2 {margin:0; padding:0;line-height:1em;font-size:16px;font-family:Futura, “Century Gothic”, AppleGothic, sans-serif;}
 			
-			body {background:#fff;}
+			body {background:#fff;-webkit-transition: all 0.5s ease-out;-moz-transition: all 0.5s ease-out;-ms-transition: all 0.5s ease-out;transition: all 0.5s ease-out;}
 			
 			.cont{width:960px; margin:0 auto;padding:2em 2%;}
 			
 			h1{margin:0:padding:0; font-size:2.4em; line-height:1.6em;}
 			
-			span{display:block; text-align:center; padding:0; margin:0; font-size:2em; line-height:2em;}
-			
-			.col{margin:0; padding:0; overflow:auto; border:1px solid black; height:4em;
-			-webkit-transition: all 0.5s ease-out;-moz-transition: all 0.5s ease-out;-ms-transition: all 0.5s ease-out;transition: all 0.5s ease-out;}
+			h2{display:block; text-align:center; padding:0; margin:0; font-size:2em; line-height:2em;}
 		
 			ul{margin:0; padding:0; width:100%; text-align:center;}
 			
@@ -29,8 +26,7 @@
 			
 			.s{border:1px solid black;}
 			
-			button{text-align:center;margin:1em auto; padding:1em 0; width:70%; display:block; border:1px solid #fff; background: none; }
-			button:hover{border-color: #999;  cursor:pointer}
+			button{text-align:center;margin:1em auto; padding:1em 0; width:70%; display:block; border:1px solid #fff; background: none; cursor:pointer}
 			
 			.mob, .land, .port { display: none; }
 			
@@ -52,46 +48,41 @@
 				}
 				
 				@media screen and (orientation:landscape) and (max-width:600px) {
-					span, .col, header, .intro, .port, button {display:none}
+					h2, .col, header, .intro, .port, button {display:none}
 					.land{display:block;text-align:center}
 					.cont{padding-top:0;}
 				}
-
 			
 		</style>
 		
 		<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.6.2.min.js"></script>
 		<script>
 			$(function(){
-				var color = $('.col');var display = $('span');
+				var display = $('h2'); var tot=256;
 				
-				function setRBG(){r=0;g=0;b=0;x=0;$('.s').each(function(){r=r+parseInt($(this).attr('data-r'));g=g+parseInt($(this).attr('data-g'));b=b+parseInt($(this).attr('data-b'));x++;});x=='0'?rgb='rgb(255,255,255)':rgb='rgb('+Math.round((r/x))+','+Math.round((g/x))+','+Math.round((b/x))+')';}
+				function setRBG(){r=0;g=0;b=0;x=0;$('.s').each(function(){r=r+parseInt($(this).attr('data-r'));g=g+parseInt($(this).attr('data-g'));b=b+parseInt($(this).attr('data-b'));x++;});if(x=='0'){rgb='rgb(255,255,255)';tot==0;}else{rgb='rgb('+Math.round((r/x))+','+Math.round((g/x))+','+Math.round((b/x))+')';tot=(Math.round((r/x))+Math.round((g/x))+Math.round((b/x)));}}
 				
 				
-				function update(){setRBG();display.html(rgb);color.css('background',rgb);}
+				function update(){setRBG();display.html(rgb);$('body').css('background', rgb);console.log(tot);
+					if(tot < 255){
+						$('body').css('color', '#fff');$('button').css('color', '#fff');
+					}else{
+						$('body').css('color', '#000');$('button').css('color', '#000');
+					}
+				}
 				
 				if ('ontouch' in document) {
 				    $('li').bind('ontouch', function(){$(this).hasClass('s')?$(this).removeClass('s'):$(this).addClass('s');update();});
 				}else{
-					$('li').click(function(){$(this).hasClass('s')?$(this).removeClass('s'):$(this).addClass('s');update();orient();});
+					$('li').click(function(){$(this).hasClass('s')?$(this).removeClass('s'):$(this).addClass('s');update();});
 				}
-				
-				update();
 				
 				$('button').click(function(){
 					$('li').removeClass('s');
 					update();
 				});
 				
-				window.onload = function initialLoad(){  
-				    orient();  
-				}  
-				
-				function orient(){  
-				    if(window.orientation == 90 || window.orientation == -90){  
-				    	$('body').css('background', rgb); 
-				    }  
-				}  
+				update();
 				
 			});
 		</script>
@@ -106,11 +97,9 @@
 				Choose a base color for your site based on the emotions you want it to carry.
 			</p>
 			<p class='port'>Rotate your device to choose colors</p>
-			<p class='land'>Rotate your device to see result</p>
+			<p class='land'>Rotate your device to see rgb settings</p>
 			
-			<span></span>
-			<div class='col'></div>
-			
+			<h2></h2>			
 			<button>Reset</button>
 			
 			<ul>
