@@ -58,13 +58,13 @@
 		<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.6.2.min.js"></script>
 		<script>
 			$(function(){
-				var display = $('h2'); var tot=256;
+				var display = $('h2'); var tot=1000;
 				
 				function setRBG(){r=0;g=0;b=0;x=0;$('.s').each(function(){r=r+parseInt($(this).attr('data-r'));g=g+parseInt($(this).attr('data-g'));b=b+parseInt($(this).attr('data-b'));x++;});if(x=='0'){rgb='rgb(255,255,255)';tot==0;}else{rgb='rgb('+Math.round((r/x))+','+Math.round((g/x))+','+Math.round((b/x))+')';tot=(Math.round((r/x))+Math.round((g/x))+Math.round((b/x)));}}
 				
 				
 				function update(){setRBG();display.html(rgb);$('body').css('background', rgb);console.log(tot);
-					if(tot < 255){
+					if(tot < 270){
 						$('body').css('color', '#fff');$('button').css('color', '#fff');
 					}else{
 						$('body').css('color', '#000');$('button').css('color', '#000');
