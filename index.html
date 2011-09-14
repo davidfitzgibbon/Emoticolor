@@ -73,7 +73,7 @@
 				if ('ontouch' in document) {
 				    $('li').bind('ontouch', function(){$(this).hasClass('s')?$(this).removeClass('s'):$(this).addClass('s');update();});
 				}else{
-					$('li').click(function(){$(this).hasClass('s')?$(this).removeClass('s'):$(this).addClass('s');update();});
+					$('li').click(function(){$(this).hasClass('s')?$(this).removeClass('s'):$(this).addClass('s');update();orient();});
 				}
 				
 				update();
@@ -89,8 +89,7 @@
 				
 				function orient(){  
 				    if(window.orientation == 90 || window.orientation == -90){  
-				    	bodyCol = $('.col').css('backgroundColor');
-				    	$('.cont').css('backgroundColor', bodyCol); 
+				    	$('body').css('background', rgb); 
 				    }  
 				}  
 				
