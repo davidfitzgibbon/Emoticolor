@@ -10,21 +10,27 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		
 		<style>
-			body{margin:0; padding:0;background:rgb(245,245,245);}
+			body, h1, li, ul, div, span {margin:0; padding:0;line-height:1em;font-size:16px;font-family:Futura, “Century Gothic”, AppleGothic, sans-serif;}
 			
-			.cont{width:960px; margin:auto;padding:2%;}
+			body {background:#fff;}
+			
+			.cont{width:960px; margin:0 auto;padding:2em 2%;}
+			
+			h1{margin:0:padding:0; font-size:2.4em; line-height:1.6em;}
+			
+			span{display:block; text-align:center; padding:0; margin:0; font-size:2em; line-height:2em;}
+			
+			.col{margin:0; padding:0; overflow:auto; border:1px solid black; height:4em;
+			-webkit-transition: all 0.5s ease-out;-moz-transition: all 0.5s ease-out;-ms-transition: all 0.5s ease-out;transition: all 0.5s ease-out;}
 		
 			ul{margin:0; padding:0; width:100%; text-align:center;}
 			
-			li{padding:10px; width:110px;  list-style:none; margin:0; display:inline-block; border:solid 1px white; text-align:center; border-radius:5px; cursor:pointer;}
+			li{padding: .25em .5em;; list-style:none; margin: .5em .45em; display:inline-block; border:solid 1px #eee; text-align:center; border-radius:5px; cursor:pointer;width: 100px;-webkit-transition: all 0.5s ease-out;-moz-transition: all 0.5s ease-out;-ms-transition: all 0.5s ease-out;transition: all 0.5s ease-out;}
 			
 			.s{border:1px solid black;}
 			
-			.col{height:5em; width:70%; margin:0 auto 1em auto; padding:0; overflow:auto; border:1px solid black;-webkit-transition: all 0.5s ease-out;-moz-transition: all 0.5s ease-out;-ms-transition: all 0.5s ease-out;transition: all 0.5s ease-out;}
-			
-			span{display:block; text-align:center; width:100%; height:42px; padding:0; font-size: 3.5em;line-height: 1em;margin:0 0 1em 0;}
-			
-			button{text-align:center;margin:0 auto 20px auto; padding:10px 15px; font-size:1em;width:auto;display:block;width:100px;}
+			button{text-align:center;margin:1em auto; padding:1em 0; width:70%; display:block; border:1px solid #fff; background: none; }
+			button:hover{border-color: #999;  cursor:pointer}
 			
 			.mob, .land, .port { display: none; }
 			
@@ -37,21 +43,18 @@
 
 			@media (max-width: 600px) { 
 				.mob{display:block;}
-				span{font-size:2em;}
+				button{border-color: #eee;margin-top:4em;}
 			}
 			
 				@media screen and (orientation:portrait) and (max-width:600px) {
-				
 				    ul, .land{display:none;}
 				    .port{display:block;}
-				
 				}
 				
 				@media screen and (orientation:landscape) and (max-width:600px) {
-				
-				   span, .col, header, .intro, .port, button {display:none}
-				   li{width:27%}
+					span, .col, header, .intro, .port, button {display:none}
 					.land{display:block;text-align:center}
+					.cont{padding-top:0;}
 				}
 
 			
@@ -62,7 +65,7 @@
 			$(function(){
 				var color = $('.col');var display = $('span');
 				
-				function setRBG(){r=0;g=0;b=0;x=0;$('.s').each(function(){r=r+parseInt($(this).attr('data-r'));g=g+parseInt($(this).attr('data-g'));b=b+parseInt($(this).attr('data-b'));x++;});x=='0'?rgb='rgb(244,244,244)':rgb='rgb('+Math.round((r/x))+','+Math.round((g/x))+','+Math.round((b/x))+')';}
+				function setRBG(){r=0;g=0;b=0;x=0;$('.s').each(function(){r=r+parseInt($(this).attr('data-r'));g=g+parseInt($(this).attr('data-g'));b=b+parseInt($(this).attr('data-b'));x++;});x=='0'?rgb='rgb(255,255,255)':rgb='rgb('+Math.round((r/x))+','+Math.round((g/x))+','+Math.round((b/x))+')';}
 				
 				
 				function update(){setRBG();display.html(rgb);color.css('background',rgb);}
