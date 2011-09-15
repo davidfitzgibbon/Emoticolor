@@ -28,7 +28,7 @@
 			
 			.s{border-color: black;}
 			
-			button{text-align:center;margin:1em auto; padding:1em 0; width:70%; display:block; border:1px solid #fff; background: none; cursor:pointer}
+			button{text-align:center;margin:1em 1%; padding:1em 0; width:48%; float:left; display:block; border:1px solid #fff; background: none; cursor:pointer}
 			
 			.mob, .land, .port { display: none; }
 			
@@ -74,19 +74,17 @@
 					}
 				}
 				
+				function randomize(){
+					$('ul li').remove();
+					printlist();
+				}
+
+				function restart(){
+				if ('ontouch' in document) {$('li').bind('ontouch', function(){$(this).hasClass('s')?$(this).removeClass('s'):$(this).addClass('s');update();});$('.reset').bind('ontouch', function(){$('li').removeClass('s');update();});$('.rand').bind('ontouch', function(){randomize();update();restart()});}else{$('li').click(function(){$(this).hasClass('s')?$(this).removeClass('s'):$(this).addClass('s');update();});$('.reset').click(function(){$('li').removeClass('s');update();});$('.rand').click(function(){randomize();update();restart();});}}
+				
 				printlist();
 				update();
-				
-				if ('ontouch' in document) {
-				$('li').bind('ontouch', function(){
-					$(this).hasClass('s')?$(this).removeClass('s'):$(this).addClass('s');update();
-				});
-				
-				$('.reset').bind('ontouch', function(){$('li').removeClass('s');update();});
-				}else{$('li').click(function(){$(this).hasClass('s')?$(this).removeClass('s'):$(this).addClass('s');update();});}
-				
-				$('.reset').click(function(){$('li').removeClass('s');update();});
-					
+				restart();	
 			});
 		</script>
 	</head>
@@ -96,13 +94,12 @@
 			<header>
 				<h1>Emoticolor</h1>
 			</header>
-			<p class="intro">
-				Choose a base color for your site based on the emotions you want it to carry.
-			</p>
+			<p class="intro">Choose a base color for your site based on the emotions you want it to carry.</p>
 			<p class='port'>Rotate your device to choose colors</p>
 			<p class='land'>Rotate your device to see rgb settings</p>
 			
 			<h2></h2>			
+			<button class="rand">Randomize</button>
 			<button class="reset">Reset</button>
 			
 			<ul></ul>
