@@ -75,12 +75,12 @@
 				}
 				
 				function randomize(){
-					$('ul li').remove();
+					$('li').remove();
 					printlist();
 				}
 
 				function restart(){
-				if ('ontouch' in document) {$('li').bind('ontouch', function(){$(this).hasClass('s')?$(this).removeClass('s'):$(this).addClass('s');update();});$('.reset').bind('ontouch', function(){$('li').removeClass('s');update();});$('.rand').bind('ontouch', function(){randomize();update();restart()});}else{$('li').click(function(){$(this).hasClass('s')?$(this).removeClass('s'):$(this).addClass('s');update();});$('.reset').click(function(){$('li').removeClass('s');update();});$('.rand').click(function(){randomize();update();restart();});}}
+				if ('ontouch' in document) {$('ul li').bind('ontouch', function(){$(this).hasClass('s')?$(this).removeClass('s'):$(this).addClass('s');update();});$('.reset').bind('ontouch', function(){$('li').removeClass('s');update();});$('.rand').bind('ontouch', function(){randomize();update();restart()});}else{$('ul li').click(function(){$(this).hasClass('s')?$(this).removeClass('s'):$(this).addClass('s');update();});$('.reset').click(function(){$('li').removeClass('s');update();});$('.rand').click(function(){randomize();update();restart();});}}
 				
 				printlist();
 				update();
