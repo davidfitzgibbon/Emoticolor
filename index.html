@@ -69,14 +69,14 @@
 					$('.reset').bind('ontouch', function(){$('li').removeClass('s');update();});
 					$('.rand').bind('ontouch', function(){update();});
 					$('button').bind('ontouch', function(){
-						$(this).fadeTo(250, 0).delay(500).fadeTo(250, 1);
+						$(this).fadeTo(100, 0).delay(100).fadeTo(100, 1);
 					});
 				}else{
 					$('ul').click(function(e){$(e.target).hasClass('s')?$(e.target).removeClass('s'):$(e.target).addClass('s');console.log(e.target);update();});
 					$('.reset').click(function(){$('li').removeClass('s');update();});
 					$('.rand').click(function(){randomize();update();});
 					$('button').click(function(){
-						$(this).fadeTo(250, 0).delay(500).fadeTo(250, 1);
+						$(this).fadeTo(100, 0).delay(100).fadeTo(100, 1);
 					});
 				}	
 							
