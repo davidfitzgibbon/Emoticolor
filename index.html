@@ -49,7 +49,7 @@
 				
 				list = {"colors":[{"r":"255","g":"0","b":"0","es":["fire", "blood"]},{"r":"255","g":"192","b":"203","es":["sexuality", "passion", "sensitivity", "love"]},{"r":"255","g":"192","b":"203","es":["romance", "love", "friendship", "feminine", "passive"]},{"r":"139","g":"0","b":"0","es":["vigor", "willpower", "rage", "anger", "leadership", "courage", "longing", "malice", "wrath"]},{"r":"165","g":"42","b":"42","es":["stability", "masculine"]},{"r":"210","g":"105","b":"30","es":["harvest", "fall"]},{"r":"255","g":"165","b":"0","es":["energy", "happiness"]},{"r":"184","g":"134","b":"11","es":["deceit", "distrust"]},{"r":"205","g":"92","b":"92","es":["desire", "passion", "pleasure", "domination", "aggression", "action"]},{"r":"255","g":"215","b":"0","es":["prestige", "illumination", "wisdom", "wealth", "quality"]},{"r":"255","g":"255","b":"0","es":["happiness", "intellect", "energy"]},{"r":"240","g":"230","b":"140","es":["caution", "decay", "sickness", "jealousy"]},{"r":"255","g":"255","b":"224","es":["intellect", "freshness", "joy"]},{"r":"0","g":"128","b":"0","es":["nature", "growth", "harmony", "freshness", "fertility"]},{"r":"0","g":"100","b":"0","es":["ambition", "greed", "jealousy"]},{"r":"154","g":"205","b":"205","es":["sickness", "cowardice", "discord", "jealousy"]},{"r":"128","g":"128","b":"0","es":["peace"]},{"r":"0","g":"255","b":"255","es":["healing", "protection"]},{"r":"0","g":"0","b":"255","es":["depth", "stability", "trust", "loyalty", "wisdom", "confidence", "intelligence", "faith", "truth"]},{"r":"173","g":"216","b":"230","es":["health", "healing", "tranquility", "understanding", "softness"]},{"r":"0","g":"0","b":"139","es":["knowledge", "power", "integrity", "seriousness"]},{"r":"128","g":"0","b":"128","es":["royalty", "power", "nobility", "luxury", "ambition", "wealth", "extravagance"]},{"r":"211","g":"160","b":"211","es":["romantic", "nostalgic"]},{"r":"139","g":"0","b":"139","es":["gloom", "sad", "frustration"]},{"r":"255","g":"255","b":"255","es":["light", "goodness", "innocence", "purity", "virginity"]},{"r":"0","g":"0","b":"0","es":["power", "elegance", "formality", "death", "evil", "mystery"]}]}
 				
-				var display = $('h2'); var tot=1000;var r=0;var g=0;var b=0;var x=0;var items= new Array();
+				var display = $('h2'), tot=1000, r=0, g=0, b=0, x=0, items= new Array();
 					
 				function total(){tot=(Math.round((r/x))+Math.round((g/x))+Math.round((b/x)));}
 				
@@ -69,14 +69,14 @@
 					$('.reset').bind('ontouch', function(){$('li').removeClass('s');update();});
 					$('.rand').bind('ontouch', function(){update();});
 					$('button').bind('ontouch', function(){
-						$(this).fadeTo(100, 0).delay(100).fadeTo(100, 1);
+						$(this).stop().fadeTo(100, 0).delay(100).fadeTo(100, 1);
 					});
 				}else{
 					$('ul').click(function(e){$(e.target).hasClass('s')?$(e.target).removeClass('s'):$(e.target).addClass('s');console.log(e.target);update();});
 					$('.reset').click(function(){$('li').removeClass('s');update();});
 					$('.rand').click(function(){randomize();update();});
 					$('button').click(function(){
-						$(this).fadeTo(100, 0).delay(100).fadeTo(100, 1);
+						$(this).stop().fadeTo(100, 0).delay(100).fadeTo(100, 1);
 					});
 				}	
 							
