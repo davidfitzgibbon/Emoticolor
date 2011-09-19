@@ -72,7 +72,7 @@
 						$(this).stop().fadeTo(100, 0).delay(100).fadeTo(100, 1);
 					});
 				}else{
-					$('ul').click(function(e){$(e.target).hasClass('s')?$(e.target).removeClass('s'):$(e.target).addClass('s');console.log(e.target);update();});
+					$('ul').click(function(e){$(e.target).hasClass('s')?$(e.target).removeClass('s'):$(e.target).addClass('s');update();});
 					$('.reset').click(function(){$('li').removeClass('s');update();});
 					$('.rand').click(function(){randomize();update();});
 					$('button').click(function(){
