@@ -16,26 +16,27 @@
 			
 			h1{font-size:2.4em; line-height:1.6em;}
 			
-			h2{display:block; text-align:center; font-size:2em; line-height:2em;}
-		
-			ul{margin:0; padding:0; width:100%; text-align:center;}
+			h2{display:inline; font-size:2em; line-height:2em;}
 			
-			li{padding: .25em .5em;; list-style:none; margin: .5em .45em; display:inline-block; border:solid 1px #eee; text-align:center; border-radius:5px; cursor:pointer;width: 100px;-webkit-transition: all 0.5s ease-out;-moz-transition: all 0.5s ease-out;-ms-transition: all 0.5s ease-out;transition: all 0.5s ease-out;}
+			button{text-align:center;margin:1em 1%; padding:1em 0; width:23.7%; float:right; display:block; border:1px solid #fff; background: none; cursor:pointer;border-radius:5px;border:solid 1px #eee; }
+		
+			ul{margin:0 0 0 -10px; padding:0; width:100%; text-align:center;}
+			
+			li{padding: .25em .5em; list-style:none; margin: .5em 0 .5em 10px; display:inline-block; border:solid 1px #eee; text-align:center; border-radius:5px; cursor:pointer;width: 132px;-webkit-transition: all 0.5s ease-out;-moz-transition: all 0.5s ease-out;-ms-transition: all 0.5s ease-out;transition: all 0.5s ease-out;}
 
 			li, button {-webkit-tap-highlight-color: rgba(255, 255, 255, 0);}
 			
 			.s{border-color: black;}
-			
-			button{text-align:center;margin:1em 1%; padding:1em 0; width:48%; float:left; display:block; border:1px solid #fff; background: none; cursor:pointer;border-radius:5px; }
 			
 			.mob, .land, .port { display: none; }
 			
 			a:hover, a:active, li:hover, li:active { outline: 0; }
 			
 			@media (max-width: 960px) {.cont{width:96%;}}
+	
+			@media (max-width: 620px) {button{border-color: #eee;margin-top:1em;width:98%;}}
 
-
-			@media (max-width: 600px) {.mob{display:block;}button{border-color: #eee;margin-top:1em;width:98%;float:none;}}
+			@media (max-width: 600px) {.mob{display:block;}}
 			
 			@media (orientation:portrait) and (max-width:600px) {ul, .land{display:none;}.port{display:block;}}
 				
@@ -47,7 +48,7 @@
 		<script>
 				$(function(){
 				
-				var list = {"colors":[{"r":"255","g":"0","b":"0","es":["fire", "blood"]},{"r":"255","g":"192","b":"203","es":["sexuality", "passion", "sensitivity", "love"]},{"r":"255","g":"192","b":"203","es":["romance", "love", "friendship", "feminine", "passive"]},{"r":"139","g":"0","b":"0","es":["vigor", "willpower", "rage", "anger", "leadership", "courage", "longing", "malice", "wrath"]},{"r":"165","g":"42","b":"42","es":["stability", "masculine"]},{"r":"210","g":"105","b":"30","es":["harvest", "fall"]},{"r":"255","g":"165","b":"0","es":["energy", "happiness"]},{"r":"184","g":"134","b":"11","es":["deceit", "distrust"]},{"r":"205","g":"92","b":"92","es":["desire", "passion", "pleasure", "domination", "aggression", "action"]},{"r":"255","g":"215","b":"0","es":["prestige", "illumination", "wisdom", "wealth", "quality"]},{"r":"255","g":"255","b":"0","es":["happiness", "intellect", "energy"]},{"r":"240","g":"230","b":"140","es":["caution", "decay", "sickness", "jealousy"]},{"r":"255","g":"255","b":"224","es":["intellect", "freshness", "joy"]},{"r":"0","g":"128","b":"0","es":["nature", "growth", "harmony", "freshness", "fertility"]},{"r":"0","g":"100","b":"0","es":["ambition", "greed", "jealousy"]},{"r":"154","g":"205","b":"205","es":["sickness", "cowardice", "discord", "jealousy"]},{"r":"128","g":"128","b":"0","es":["peace"]},{"r":"0","g":"255","b":"255","es":["healing", "protection"]},{"r":"0","g":"0","b":"255","es":["depth", "stability", "trust", "loyalty", "wisdom", "confidence", "intelligence", "faith", "truth"]},{"r":"173","g":"216","b":"230","es":["health", "healing", "tranquility", "understanding", "softness"]},{"r":"0","g":"0","b":"139","es":["knowledge", "power", "integrity", "seriousness"]},{"r":"128","g":"0","b":"128","es":["royalty", "power", "nobility", "luxury", "ambition", "wealth", "extravagance"]},{"r":"211","g":"160","b":"211","es":["romantic", "nostalgic"]},{"r":"139","g":"0","b":"139","es":["gloom", "sad", "frustration"]},{"r":"255","g":"255","b":"255","es":["light", "goodness", "innocence", "purity", "virginity"]},{"r":"0","g":"0","b":"0","es":["power", "elegance", "formality", "death", "evil", "mystery"]}]}, display = $('h2'), tot=1000, r=0, g=0, b=0, x=0, items= new Array();
+				var list = {"colors":[{"r":"255","g":"0","b":"0","es":["fire", "blood"]},{"r":"255","g":"192","b":"203","es":["sexuality", "passion", "sensitivity", "love"]},{"r":"255","g":"192","b":"203","es":["romance", "love", "friendship", "feminine", "passive"]},{"r":"139","g":"0","b":"0","es":["vigor", "willpower", "rage", "anger", "leadership", "courage", "longing", "malice", "wrath"]},{"r":"165","g":"42","b":"42","es":["stability", "masculine"]},{"r":"210","g":"105","b":"30","es":["harvest", "fall"]},{"r":"255","g":"165","b":"0","es":["energy", "happiness"]},{"r":"184","g":"134","b":"11","es":["deceit", "distrust"]},{"r":"205","g":"92","b":"92","es":["desire", "passion", "pleasure", "domination", "aggression", "action"]},{"r":"255","g":"215","b":"0","es":["prestige", "illumination", "wisdom", "wealth", "quality"]},{"r":"255","g":"255","b":"0","es":["happiness", "intellect", "energy"]},{"r":"240","g":"230","b":"140","es":["caution", "decay", "sickness", "jealousy"]},{"r":"255","g":"255","b":"224","es":["intellect", "freshness", "joy"]},{"r":"0","g":"128","b":"0","es":["nature", "growth", "harmony", "freshness", "fertility"]},{"r":"0","g":"100","b":"0","es":["ambition", "greed", "jealousy"]},{"r":"154","g":"205","b":"205","es":["sickness", "cowardice", "discord", "jealousy"]},{"r":"128","g":"128","b":"0","es":["peace"]},{"r":"0","g":"255","b":"255","es":["healing", "protection"]},{"r":"0","g":"0","b":"255","es":["depth", "stability", "trust", "loyalty", "wisdom", "confidence", "intelligence", "faith", "truth"]},{"r":"173","g":"216","b":"230","es":["health", "healing", "tranquility", "understanding", "softness"]},{"r":"0","g":"0","b":"139","es":["knowledge", "power", "integrity", "seriousness"]},{"r":"128","g":"0","b":"128","es":["royalty", "power", "nobility", "luxury", "ambition", "wealth", "extravagance"]},{"r":"211","g":"160","b":"211","es":["romantic", "nostalgic"]},{"r":"139","g":"0","b":"139","es":["gloom", "sad", "frustration"]},{"r":"255","g":"255","b":"255","es":["light", "goodness", "innocence", "purity", "virginity"]},{"r":"0","g":"0","b":"0","es":["elegance", "formality", "death", "evil", "mystery"]}]}, display = $('h2'), tot=1000, r=0, g=0, b=0, x=0, items= new Array();
 					
 				function total(){tot=(Math.round((r/x))+Math.round((g/x))+Math.round((b/x)));}
 				
