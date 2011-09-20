@@ -30,7 +30,7 @@
 			
 			li{padding: .25em .5em; list-style:none; margin: .5em 0 .5em 10px; display:inline-block; border:solid 1px #eee; text-align:center; border-radius:5px; cursor:pointer;width: 132px;-webkit-transition: all 0.5s ease-out;-moz-transition: all 0.5s ease-out;-ms-transition: all 0.5s ease-out;transition: all 0.5s ease-out;}
 
-			li {-webkit-tap-highlight-color: rgba(255, 255, 255, 0);}
+			li, a {-webkit-tap-highlight-color: rgba(255, 255, 255, 0);}
 			
 			.s{border-color: black;}
 			
@@ -80,12 +80,12 @@
 					$('ul').bind('ontouch', function(e){if(e.target.tagName == "LI"){$(e.target).hasClass('s')?$(e.target).removeClass('s'):$(e.target).addClass('s');update();}});
 					$('.reset').bind('ontouch', function(){$('li').removeClass('s');update();});
 					$('.rand').bind('ontouch', function(){update();});
-					$('button').bind('ontouch', function(){feedback(this);});
+					$('.options a').bind('ontouch', function(){feedback(this);});
 				}else{
 					$('ul').click(function(e){if(e.target.tagName == "LI"){$(e.target).hasClass('s')?$(e.target).removeClass('s'):$(e.target).addClass('s');update();}});
 					$('.reset').click(function(){$('li').removeClass('s');update();});
 					$('.rand').click(function(){randomize();update();});
-					$('button').click(function(){feedback(this);});
+					$('.options a').click(function(){feedback(this);});
 				}	
 							
 				printlist();
