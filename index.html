@@ -46,7 +46,7 @@
 				h2{border:none;margin:0;padding:0;}
 				.feedback{width:100%}
 				.options{width:100%;}
-				.options a {display:block;text-align:center;padding:10px;border:2px solid #999;width:50%;margin: 10px auto;}
+				.options a {display:block;text-align:center;padding:10px;border:1px solid #000;width:50%;margin: 10px auto;}
 			}
 			
 			@media (orientation:portrait) and (max-width:600px) {ul, .land{display:none;}.port{display:block;}}
@@ -65,7 +65,22 @@
 				
 				function setRBG(){r=0;g=0;b=0;x=0;$('.s').each(function(){r=r+parseInt($(this).attr('data-r'));g=g+parseInt($(this).attr('data-g'));b=b+parseInt($(this).attr('data-b'));x++;});if(x=='0'){rgb='rgb(255,255,255)';total();}else{rgb='rgb('+Math.round((r/x))+','+Math.round((g/x))+','+Math.round((b/x))+')';total();}}
 				
-				function update(){setRBG();display.html(rgb);$('body').css('background', rgb);if(tot < 254){$('body').css('color', '#fff');$('h2').css('borderColor', '#fff');$('a').css('color', '#fff');}else{$('body').css('color', '#000');$('h2').css('borderColor', '#000');$('a').css('color', '#000');}}
+				function update(){
+					setRBG();
+					display.html(rgb);
+					$('body').css('background', rgb);
+					if(tot < 254){
+						var newCol = 'rgba(255,255,255,.7)';
+						}
+						
+						else{
+							var newCol = 'rgba(0,0,0,.7)';
+					}
+					$('body').css('color', newCol);
+					$('h2').css('borderColor', newCol);
+					$('a').css({'color': newCol, 'borderColor' : newCol});
+					}
+					
 				
 				for(var i in list.colors){for(var g in list.colors[i].es){items.push('<li data-r="'+list.colors[i].r+'" data-g="'+list.colors[i].g+'" data-b="'+list.colors[i].b+'">'+list.colors[i].es[g]+'</li>');}}
 				
